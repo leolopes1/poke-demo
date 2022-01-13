@@ -1,0 +1,25 @@
+
+<p-card>
+  <div style="position: relative">
+    <div class="poke-flex">
+      <div>
+        <img [src]="pokemon.image" [alt]="pokemon.name" class="img-object"/>
+      </div>
+      <div class="poke-flex column" style="margin-right: 36px;">
+        <div>Dex number: {{pokemon.number}}</div>
+        <div>Name: {{pokemon.name}}</div>
+        <div>Version: {{pokemon.version}}</div>
+        <div>Type: {{pokemon.type}}</div>
+        <div *ngIf="pokemon.evolution.length">Evolution: {{pokemon.evolution}}</div>
+      </div>
+      <div>
+        <p-button label="Go to List " [routerLink]="['/']" ></p-button>
+      </div>
+    </div>
+    <div *ngIf="isLoading" class="c-spinner">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  </div>
+
+
+</p-card>
